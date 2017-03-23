@@ -10,7 +10,8 @@
 #import "HRMasterViewController.h"
 
 @interface HRSplitViewController ()
-@property (weak, nonatomic) HRMasterViewController *masterVC;
+
+
 @end
 
 @implementation HRSplitViewController
@@ -27,7 +28,6 @@
 
 - (void)setupChildViewController{
     HRMasterViewController *masterVC = [[HRMasterViewController alloc] init];
-    self.masterVC = masterVC;
     [self addChildViewController:masterVC];
     
     self.maximumPrimaryColumnWidth = 80;
@@ -54,5 +54,8 @@
     
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+}
 
 @end

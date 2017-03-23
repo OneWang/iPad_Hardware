@@ -28,7 +28,7 @@
     
     [self.navigationController.view mas_makeConstraints:^(MASConstraintMaker *make) {
         // 这里直接设置上左下右是无效的,需要设置内边距
-        make.edges.mas_equalTo(UIEdgeInsetsMake(20, 0, 0, 0));
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
 
 }
@@ -37,11 +37,11 @@
     if (self = [super init]) {
         _masterItem = item;
         
-        UIView *maskView = [[UIView alloc ] init];
+        UIView *maskView = [[UIView alloc] init];
         maskView.backgroundColor = [UIColor colorWithWhite:34/255.0 alpha:1.0];
         [self.view insertSubview:maskView atIndex:0];
         [maskView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsMake(0, -2, 0, 0));
+            make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
         }];
 
     }

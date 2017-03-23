@@ -61,7 +61,10 @@
 }
 
 - (void)selectedClick:(UIButton *)sender{
-
+    UIPopoverController *popVC = [[UIPopoverController alloc] initWithContentViewController:[[UIViewController alloc] init]];
+    popVC.popoverContentSize = CGSizeMake(200, 300);
+    popVC.backgroundColor = [UIColor redColor];
+    [popVC presentPopoverFromRect:sender.frame inView:self permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
 }
 
 - (void)trainType:(UIButton *)sender{

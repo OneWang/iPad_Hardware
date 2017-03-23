@@ -38,12 +38,11 @@
     UIImageView *seperatorImageView = [[UIImageView alloc] init];
     [self addSubview:seperatorImageView];
     
-    
     // button自身约束
     [self mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(60);
     }];
-    
+        
     // 分割线ImageView
     seperatorImageView.image = [UIImage imageNamed:@"tabbar_separate_line"];
     [seperatorImageView mas_makeConstraints:^(MASConstraintMaker *make) {
