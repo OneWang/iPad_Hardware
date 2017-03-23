@@ -9,7 +9,8 @@
 #import "HRHomeHeaderView.h"
 #import <Masonry.h>
 
-@interface HRHomeHeaderView ()
+
+@interface HRHomeHeaderView ()<UIPopoverPresentationControllerDelegate>
 
 
 
@@ -61,10 +62,9 @@
 }
 
 - (void)selectedClick:(UIButton *)sender{
-    UIPopoverController *popVC = [[UIPopoverController alloc] initWithContentViewController:[[UIViewController alloc] init]];
-    popVC.popoverContentSize = CGSizeMake(200, 300);
-    popVC.backgroundColor = [UIColor redColor];
-    [popVC presentPopoverFromRect:sender.frame inView:self permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hr_homeHeaderView:didSelectedTeam:)]) {
+        [self.delegate hr_homeHeaderView:self didSelectedTeam:sender];
+    }
 }
 
 - (void)trainType:(UIButton *)sender{

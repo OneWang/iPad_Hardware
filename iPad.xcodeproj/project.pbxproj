@@ -23,6 +23,9 @@
 		0A8CCBCA1E8124D70037D473 /* HRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8CCBC91E8124D70037D473 /* HRHomeViewController.m */; };
 		0A8CCBCE1E8125D70037D473 /* HRMasterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8CCBCD1E8125D70037D473 /* HRMasterViewModel.m */; };
 		0A8CCBD11E8138E30037D473 /* HRHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8CCBD01E8138E30037D473 /* HRHomeHeaderView.m */; };
+		0A9E6BDC1E83BEE400DFD2F4 /* HRHomeListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E6BDB1E83BEE400DFD2F4 /* HRHomeListController.m */; };
+		0A9E6BE01E83CBDA00DFD2F4 /* HRHomeTrainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9E6BDE1E83CBDA00DFD2F4 /* HRHomeTrainCell.m */; };
+		0A9E6BE11E83CBDA00DFD2F4 /* HRHomeTrainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9E6BDF1E83CBDA00DFD2F4 /* HRHomeTrainCell.xib */; };
 		D7EFEE07A2C94AC8A292258B /* libPods-iPad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFDE9232D17C1348ADFD1680 /* libPods-iPad.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,11 @@
 		0A8CCBCD1E8125D70037D473 /* HRMasterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRMasterViewModel.m; sourceTree = "<group>"; };
 		0A8CCBCF1E8138E30037D473 /* HRHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRHomeHeaderView.h; sourceTree = "<group>"; };
 		0A8CCBD01E8138E30037D473 /* HRHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRHomeHeaderView.m; sourceTree = "<group>"; };
+		0A9E6BDA1E83BEE400DFD2F4 /* HRHomeListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRHomeListController.h; sourceTree = "<group>"; };
+		0A9E6BDB1E83BEE400DFD2F4 /* HRHomeListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRHomeListController.m; sourceTree = "<group>"; };
+		0A9E6BDD1E83CBDA00DFD2F4 /* HRHomeTrainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRHomeTrainCell.h; sourceTree = "<group>"; };
+		0A9E6BDE1E83CBDA00DFD2F4 /* HRHomeTrainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRHomeTrainCell.m; sourceTree = "<group>"; };
+		0A9E6BDF1E83CBDA00DFD2F4 /* HRHomeTrainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HRHomeTrainCell.xib; sourceTree = "<group>"; };
 		1E3C335CB045998D360B677C /* Pods-iPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPad.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPad/Pods-iPad.release.xcconfig"; sourceTree = "<group>"; };
 		5774988A8F5DFD81340E7296 /* Pods-iPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPad/Pods-iPad.debug.xcconfig"; sourceTree = "<group>"; };
 		EFDE9232D17C1348ADFD1680 /* libPods-iPad.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iPad.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +128,7 @@
 		0A8CCB961E80E9600037D473 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				0A9E6BD91E83BEBE00DFD2F4 /* ChildListController */,
 				0A8CCBAE1E8112980037D473 /* ChildController */,
 				0A8CCB971E80E9600037D473 /* Controller */,
 				0A8CCB981E80E9600037D473 /* Model */,
@@ -152,6 +161,9 @@
 			children = (
 				0A8CCBCF1E8138E30037D473 /* HRHomeHeaderView.h */,
 				0A8CCBD01E8138E30037D473 /* HRHomeHeaderView.m */,
+				0A9E6BDD1E83CBDA00DFD2F4 /* HRHomeTrainCell.h */,
+				0A9E6BDE1E83CBDA00DFD2F4 /* HRHomeTrainCell.m */,
+				0A9E6BDF1E83CBDA00DFD2F4 /* HRHomeTrainCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +263,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		0A9E6BD91E83BEBE00DFD2F4 /* ChildListController */ = {
+			isa = PBXGroup;
+			children = (
+				0A9E6BDA1E83BEE400DFD2F4 /* HRHomeListController.h */,
+				0A9E6BDB1E83BEE400DFD2F4 /* HRHomeListController.m */,
+			);
+			name = ChildListController;
+			sourceTree = "<group>";
+		};
 		7E40D82596A1B3365FA51C2C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A8CCBAD1E80F9C60037D473 /* Main.storyboard in Resources */,
+				0A9E6BE11E83CBDA00DFD2F4 /* HRHomeTrainCell.xib in Resources */,
 				0A8CCB8F1E80E6B70037D473 /* LaunchScreen.storyboard in Resources */,
 				0A8CCB8C1E80E6B70037D473 /* Assets.xcassets in Resources */,
 			);
@@ -391,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9E6BE01E83CBDA00DFD2F4 /* HRHomeTrainCell.m in Sources */,
 				0A8CCBB41E8112CE0037D473 /* HRDataViewController.m in Sources */,
 				0A8CCB841E80E6B70037D473 /* AppDelegate.m in Sources */,
 				0A8CCBCA1E8124D70037D473 /* HRHomeViewController.m in Sources */,
@@ -403,6 +426,7 @@
 				0A8CCBC41E8115C40037D473 /* HRMasterButton.m in Sources */,
 				0A8CCBBA1E8112E20037D473 /* HRSettingViewController.m in Sources */,
 				0A8CCBA71E80E9BF0037D473 /* HRDetailViewController.m in Sources */,
+				0A9E6BDC1E83BEE400DFD2F4 /* HRHomeListController.m in Sources */,
 				0A8CCBD11E8138E30037D473 /* HRHomeHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

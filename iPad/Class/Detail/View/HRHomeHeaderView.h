@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class HRHomeHeaderView;
+@protocol HRHomeHeaderViewDelegate <NSObject>
+
+@optional
+- (void)hr_homeHeaderView:(HRHomeHeaderView *)headerView didSelectedTeam:(UIButton *)button;
+
+@end
+
 @interface HRHomeHeaderView : UIView
+
+@property (weak, nonatomic) id<HRHomeHeaderViewDelegate> delegate;
 
 @end
