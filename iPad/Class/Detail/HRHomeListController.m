@@ -10,6 +10,7 @@
 
 @interface HRHomeListController ()
 @property (strong, nonatomic) NSMutableArray *dataArray;
+
 @end
 
 @implementation HRHomeListController

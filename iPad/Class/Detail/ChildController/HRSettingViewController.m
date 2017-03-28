@@ -7,32 +7,67 @@
 //
 
 #import "HRSettingViewController.h"
+#import <Masonry.h>
 
 @interface HRSettingViewController ()
+
+@property (weak, nonatomic) UILabel *timeLabel;
+@property (strong, nonatomic) NSTimer *timer;
 
 @end
 
 @implementation HRSettingViewController
 
+static int i;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self setupUI];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    i = 0;
+    [self.timer setFireDate:[NSDate distantPast]];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    [self.timer setFireDate:[NSDate distantFuture]];
+}
+
+- (void)setupUI{
     self.view.backgroundColor = [UIColor whiteColor];
+    UILabel *time = [[UILabel alloc] init];
+    [self.view addSubview:time];
+    time.font = [UIFont systemFontOfSize:30];
+    self.timeLabel = time;
+    [time mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+    }];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(loop) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)loop{
+    i++;
+    self.timeLabel.text = [self displayTime:i];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSString *)displayTime:(int)timeInterval{
+    NSString *time = @"";
+    int seconds = timeInterval % 60;
+    int minutes = (timeInterval / 60) % 60;
+    int hours = timeInterval / 3600;
+    NSString *secondStr = seconds < 10 ? [NSString stringWithFormat:@"0%d",seconds] : [NSString stringWithFormat:@"%d",seconds];
+    NSString *minuteStr = minutes < 10 ? [NSString stringWithFormat:@"0%d",minutes] : [NSString stringWithFormat:@"%d",minutes];
+    NSString *hourStr = hours < 10 ? [NSString stringWithFormat:@"0%d",hours] : [NSString stringWithFormat:@"%d",hours];
+    time = [NSString stringWithFormat:@"%@:%@:%@",hourStr,minuteStr,secondStr];
+    return time;
 }
-*/
 
 @end

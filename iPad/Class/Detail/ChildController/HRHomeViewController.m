@@ -26,7 +26,6 @@
     [super viewDidLoad];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-    
 }
 
 #pragma mark - Table view data source
