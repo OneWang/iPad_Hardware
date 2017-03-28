@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A30E9D51E8A48D500F1569B /* HRCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A30E9D41E8A48D500F1569B /* HRCalendar.m */; };
 		0A8CCB811E80E6B70037D473 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8CCB801E80E6B70037D473 /* main.m */; };
 		0A8CCB841E80E6B70037D473 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8CCB831E80E6B70037D473 /* AppDelegate.m */; };
 		0A8CCB8C1E80E6B70037D473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A8CCB8B1E80E6B70037D473 /* Assets.xcassets */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A30E9D31E8A48D500F1569B /* HRCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRCalendar.h; sourceTree = "<group>"; };
+		0A30E9D41E8A48D500F1569B /* HRCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRCalendar.m; sourceTree = "<group>"; };
 		0A8CCB7C1E80E6B70037D473 /* iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A8CCB801E80E6B70037D473 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0A8CCB821E80E6B70037D473 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +85,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A30E9D21E8A489C00F1569B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				0A30E9D31E8A48D500F1569B /* HRCalendar.h */,
+				0A30E9D41E8A48D500F1569B /* HRCalendar.m */,
+			);
+			name = Tools;
+			path = Class/Tools;
+			sourceTree = "<group>";
+		};
 		0A8CCB731E80E6B70037D473 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 		0A8CCB7E1E80E6B70037D473 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
+				0A30E9D21E8A489C00F1569B /* Tools */,
 				0A8CCB961E80E9600037D473 /* Detail */,
 				0A8CCB9A1E80E9600037D473 /* Main */,
 				0A8CCB9E1E80E9600037D473 /* Master */,
@@ -424,6 +438,7 @@
 				0A8CCBA41E80E9AA0037D473 /* HRSplitViewController.m in Sources */,
 				0A8CCBCE1E8125D70037D473 /* HRMasterViewModel.m in Sources */,
 				0A8CCBC41E8115C40037D473 /* HRMasterButton.m in Sources */,
+				0A30E9D51E8A48D500F1569B /* HRCalendar.m in Sources */,
 				0A8CCBBA1E8112E20037D473 /* HRSettingViewController.m in Sources */,
 				0A8CCBA71E80E9BF0037D473 /* HRDetailViewController.m in Sources */,
 				0A9E6BDC1E83BEE400DFD2F4 /* HRHomeListController.m in Sources */,
