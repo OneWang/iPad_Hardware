@@ -68,17 +68,19 @@ static CGFloat bounceY = 20;
         CAShapeLayer * dashLayer = [CAShapeLayer layer];
         dashLayer.strokeColor = [UIColor whiteColor].CGColor;
         dashLayer.fillColor = [[UIColor clearColor] CGColor];
+        dashLayer.lineDashPattern = @[@2,@2];
         // 默认设置路径宽度为0，使其在起始状态下不显示
         dashLayer.lineWidth = 1.0;
         
         UILabel * label1 = (UILabel*)[self viewWithTag:2000 + i];
         
-        UIBezierPath * path = [[UIBezierPath alloc]init];
+        UIBezierPath *path = [[UIBezierPath alloc]init];
         path.lineWidth = 1.0;
         [path moveToPoint:CGPointMake( 0, label1.frame.origin.y - bounceY)];
         [path addLineToPoint:CGPointMake(self.frame.size.width - 2*bounceX,label1.frame.origin.y - bounceY)];
-        CGFloat dash[] = {10,10};
-        [path setLineDash:dash count:2 phase:10];
+        CGFloat dash[] = {1,1};
+        [path setLineDash:dash count:2 phase:0];
+        [[UIColor blueColor] setStroke];
         [path stroke];
         dashLayer.path = path.CGPath;
         [self.gradientBackgroundView.layer addSublayer:dashLayer];
@@ -90,14 +92,14 @@ static CGFloat bounceY = 20;
     UILabel * label = (UILabel*)[self viewWithTag:1000];
     UIBezierPath * path = [[UIBezierPath alloc]init];
     path.lineWidth = 1.0;
-    [path moveToPoint:CGPointMake(label.frame.origin.x - bounceX, (600 -arc4random()%600) /600.0 * (self.frame.size.height - bounceY * 2))];
+    [path moveToPoint:CGPointMake(label.frame.origin.x - bounceX, (200 - arc4random()%200) /200.0 * (self.frame.size.height - bounceY * 2))];
     
     //创建折现点标记
     for (NSInteger i = 1; i < self.time.integerValue / 5 + 2; i++) {
         UILabel * label1 = (UILabel*)[self viewWithTag:1000 + i];
-        CGFloat  arc = arc4random()%600;
-        [path addLineToPoint:CGPointMake(label1.frame.origin.x - bounceX,  (600 -arc) /600.0 * (self.frame.size.height - bounceY*2 ))];
-        UILabel * falglabel = [[UILabel alloc]initWithFrame:CGRectMake(label1.frame.origin.x , (600 - arc) /600.0 * (self.frame.size.height - bounceY*2 )+ bounceY  , 30, 15)];
+        CGFloat  arc = arc4random()%200;
+        [path addLineToPoint:CGPointMake(label1.frame.origin.x - bounceX,  (200 -arc) /200.0 * (self.frame.size.height - bounceY*2 ))];
+        UILabel * falglabel = [[UILabel alloc]initWithFrame:CGRectMake(label1.frame.origin.x , (200 - arc) /200.0 * (self.frame.size.height - bounceY*2 )+ bounceY, 30, 15)];
         falglabel.tag = 3000 + i;
         falglabel.text = [NSString stringWithFormat:@"%.1f",arc];
         falglabel.font = [UIFont systemFontOfSize:8.0];
