@@ -30,12 +30,13 @@ static int i;
     [super viewWillAppear:animated];
     
     i = 0;
+    //开启
     [self.timer setFireDate:[NSDate distantPast]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    
+    //暂停
     [self.timer setFireDate:[NSDate distantFuture]];
 }
 

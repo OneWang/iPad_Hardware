@@ -61,7 +61,7 @@
     viewController.navigationItem.title = _masterItem.title;
     
     // 创建导航控制器
-    self.navigationController =[[UINavigationController alloc] initWithRootViewController:viewController];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     // 添加子控制器
     [self addChildViewController:self.navigationController];
     // 添加子视图
