@@ -10,6 +10,7 @@
 #import "HRHomeHeaderView.h"
 #import "HRHomeListController.h"
 #import "HRHomeTrainCell.h"
+#import "HRSubViewController.h"
 
 @interface HRHomeViewController ()<HRHomeHeaderViewDelegate,
                                    UIPopoverPresentationControllerDelegate,
@@ -55,6 +56,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    HRSubViewController *subVC = [[HRSubViewController alloc] init];
+    [self.navigationController pushViewController:subVC animated:YES];
 }
 
 #pragma mark - HRHomeHeaderViewDelegate

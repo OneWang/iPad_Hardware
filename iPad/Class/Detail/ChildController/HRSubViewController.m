@@ -1,35 +1,32 @@
 //
-//  HRSettingViewController.m
+//  HRSubViewController.m
 //  iPad
 //
-//  Created by LI on 2017/3/21.
-//  Copyright © 2017年 LI. All rights reserved.
+//  Created by Jack on 2018/6/7.
+//  Copyright © 2018年 LI. All rights reserved.
 //
 
-#import "HRSettingViewController.h"
+#import "HRSubViewController.h"
 #import <Masonry.h>
 
-@interface HRSettingViewController ()
-
+@interface HRSubViewController ()
 @property (weak, nonatomic) UILabel *timeLabel;
 @property (strong, nonatomic) NSTimer *timer;
-
 @end
 
-@implementation HRSettingViewController
-
-static int i;
+static int i = 0;
+@implementation HRSubViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    
     [self setupUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-    i = 0;
+//    i = 0;
     //开启
     [self.timer setFireDate:[NSDate distantPast]];
 }
@@ -74,5 +71,6 @@ static int i;
 - (void)dealloc{
     NSLog(@"%s",__func__);
 }
+
 
 @end
