@@ -26,7 +26,7 @@ static int i = 0;
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    i = 0;
+    i = 0;
     //开启
     [self.timer setFireDate:[NSDate distantPast]];
 }
